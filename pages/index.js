@@ -1,12 +1,39 @@
-import Head from 'next/head'
-import Layout from '../components/Layout'
+/* eslint-disable @next/next/no-img-element */
+import Head from "next/head";
+import Layout from "../components/Layout";
 
-import { Context } from '../utils/Context'
-import { useContext } from 'react'
+import { Context } from "../utils/Context";
+import { useContext } from "react";
+
+import { CodeBlock, CopyBlock, dracula, ocean } from "react-code-blocks";
 
 export default function Home() {
+  const {
+    state: { dark },
+  } = useContext(Context);
 
-  const { state: { dark } } = useContext(Context)
+  const html = `<img src="/uepg.png" alt="Logo UEPG" className="bg-black rounded-xl p-10 animate-pulse" />`;
+
+  const css = `
+  .imagem-uepg {
+    background-color: black;
+    border-radius: 20px;
+    padding: 40px;
+    animation: animacao 2s infinite;
+}
+
+@keyframes animacao {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 60%
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+  `;
 
   return (
     <Layout>
@@ -14,51 +41,94 @@ export default function Home() {
         <title>REA - TailWind</title>
       </Head>
 
-      <div className={`${!dark ? '' : 'dark'}`}>
-        <div className={` ease-out duration-300 flex flex-col items-center justify-center py-10 max-w-[1280px] w-full px-[20px] mx-auto`}>
-          <h1 className='text-3xl mx-4 md:text-4xl xl:text-5xl w-full'> <b className='text-cyan-500'>TailWind</b>, um novo modo de estilização WEB</h1>
-          <div className='sm:pl-[20px]'>
-            <p className='mt-5 text-xl text-gray-400'>
-              Assim como o Boostrap, Tailwind é um framework CSS que oferece a possibilidade de você criar layouts usando uma estrutura de CSS pronta. Isso permite que você otimize o tempo de criação de uma UI sem precisar fazer tudo manualmente.
-              Criado a a partir do princípio de classes utilitárias, a clássica sobreposição de classes dificilmente ocorre visto que cada elemento é estilizado inline.
+      <div className={`${!dark ? "" : "dark"}`}>
+        <div
+          className={` ease-out duration-300 flex flex-col items-center justify-center py-10 max-w-[1280px] w-full px-[20px] mx-auto`}
+        >
+          <h1 className="text-3xl mx-4 md:text-4xl xl:text-[82px] w-full text-cyan-500 font-bold mb-[10px]">
+            Tailwind
+          </h1>
+          <span className="text-gray-400 w-full text-[26px]">
+            Uma forma mais prática de usar CSS
+          </span>
+          <div className="sm:pl-[20px]">
+            <p className={`paragraph ${dark && "text-gray-400"}`}>
+              Assim como o Boostrap, Tailwind é um framework CSS que oferece a
+              possibilidade de você criar layouts usando uma estrutura de CSS
+              pronta. Isso permite que você otimize o tempo de criação de uma UI
+              sem precisar fazer tudo manualmente. Criado a partir do princípio
+              de classes utilitárias, a clássica sobreposição de classes
+              dificilmente ocorre visto que cada elemento é estilizado inline.
             </p>
-            <p className='mt-5 text-xl text-gray-400'>
-              Assim como o Boostrap, Tailwind é um framework CSS que oferece a possibilidade de você criar layouts usando uma estrutura de CSS pronta. Isso permite que você otimize o tempo de criação de uma UI sem precisar fazer tudo manualmente.
-              Criado a a partir do princípio de classes utilitárias, a clássica sobreposição de classes dificilmente ocorre visto que cada elemento é estilizado inline.
+            <p className={`paragraph ${dark && "text-gray-400"}`}>
+              Utilizando o conceito de{" "}
+              <i className="font-normal">Mobile First</i>, o tailwind é muito
+              útil para responsividade. Adicionando os prefixos <b>sm:</b>,{" "}
+              <b>md:</b>, <b>lg:</b> e <b>xl:</b> antes dos nomes das classes, é
+              possível fazer uso das{" "}
+              <i className="font-normal">Media Queries</i>. Simples assim!
             </p>
           </div>
-          <section className='seccao'>
-            <p className='text-center mb-5 text-gray-400'>Segue abaixo a comparação de códigos entre estilizações feitas para a mesma imagem usando TailWind e CSS comum.</p>
-            <img src="/uepg.png" alt="Logo UEPG"
-              className='bg-black rounded-xl p-10 animate-pulse '
-            />
-            <div className='flex gap-2 justify-center items-start mt-5 flex-col md:flex-row'>
-              <div className='w-full md:w-[50%]'>
-                <h1 className='text-cyan-500 text-xl text-center'>TailWind</h1>
-                <img src="/tw-image.png" alt="" className='rounded-2xl object-contain' />
+          <section className={`seccao ${dark && "border border-slate-600"}`}>
+            <span className={`subtitle`}>
+              Comparção entre utilizar Tailwind e CSS puro
+            </span>
+            <div className="flex items-center justify-center">
+              <div className="w-[50%]">
+                <img
+                  src="/uepg.png"
+                  alt="Logo UEPG"
+                  className="bg-black rounded-xl p-10 animate-pulse"
+                />
               </div>
-              <div className='w-full md:w-[50%]'>
-                <h1 className='text-cyan-500 text-xl text-center'>CSS somente</h1>
-                <img src="/code.png" alt="" className='object-contain rounded-2xl ' />
+              <div className="flex gap-2 justify-center items-start mt-5 flex-col w-[50%]">
+                <div className="w-full">
+                  <span className="text-cyan-500 text-xl text-center">
+                    TailWind
+                  </span>
+                  <div className="code">
+                    <CodeBlock text={html} language="html" theme={dracula} />
+                  </div>
+                </div>
+                <div className="w-full">
+                  <span className="text-cyan-500 text-xl text-center">
+                    CSS puro
+                  </span>
+                  <div className="code">
+                    <CodeBlock text={css} language="css" theme={dracula} />
+                  </div>
+                </div>
               </div>
-
             </div>
           </section>
 
-          <section className='seccao'>
-            <h1 className='text-cyan-500 text-3xl font-bold mb-6'>Vantagens</h1>
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-              <div className=''>
-                <h1 className='font-bold text-xl'>Design Responsivo com Tailwind</h1>
-                <p className='text-gray-400 mt-2 md:text-xl'>
-                  ✔ Tailwind é um framework que usa classes de utilidades, os elementos podem ficar lotados de classes, sem contar a repetição e a manutenção para vários componentes ao mesmo tempo.
-                  <br /> ✔ Por isso permite que você crie classes customizadas que recebem as classes de utilidade, e depois basta chamar as classes criadas que os componentes vão receber todas as propriedades selecionadas.
+          <section className={`seccao ${dark && "border border-slate-600"}`}>
+            <h1 className="subtitle">Vantagens</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="">
+                <h1 className="font-bold text-xl">Design Responsivo</h1>
+                <p className="text-gray-400 mt-[20px] md:text-xl">
+                  ✔ Tailwind é um framework que usa classes de utilidades,
+                  melhorando o desempenho na hora programação, uma vez que os
+                  elementos repetidos podem ser transformados em componentes.
+                </p>
+                <p className="text-gray-400 mt-[20px] md:text-xl">
+                  ✔ No Tailwind é utilizado a abordagem de mobile-first. Isso
+                  significa que quando um estilo é adicionado ao código, ele é
+                  aplicado da menor para a maior resolução, facilitando a
+                  responsividade
                 </p>
               </div>
-              <div className=''>
-                <h1 className='font-bold text-xl'>Design Responsivo com Tailwind</h1>
-                <p className='text-gray-400 mt-2 md:text-xl'>
-                  ✔ No Tailwind é utilizado a abordagem de mobile-first, similar ao que temos no Bootstrap, e isto quer dizer que quando um estilo é adicionado ao código, ele é aplicado da menor para a maior resolução
+              <div className="">
+                <h1 className="font-bold text-xl">Alto desempenho</h1>
+                <p className="text-gray-400 mt-[20px] md:text-xl">
+                  ✔ Fácil manuntenção do código, já que não é necessário ficar
+                  procurando pelos arquivos css. Toda a estilização já está no
+                  HTML.
+                </p>
+                <p className="text-gray-400 mt-[20px] md:text-xl">
+                  ✔ Alto desempenho, visto que a página precisa carregar apenas
+                  arquivos CSS, que são leves.
                 </p>
               </div>
             </div>
@@ -66,6 +136,5 @@ export default function Home() {
         </div>
       </div>
     </Layout>
-
-  )
+  );
 }

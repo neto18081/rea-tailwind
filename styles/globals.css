@@ -8,7 +8,7 @@
     }
 
     .link {
-        @apply text-2xl hover: animate-bounce;
+        @apply text-2xl hover:animate-bounce;
     }
 
     .bloco {
@@ -16,6 +16,39 @@
     }
 
     .seccao {
-        @apply mt-10 flex flex-col items-center justify-center shadow-md rounded-2xl w-[90%] h-max py-5;
+        @apply mt-10 flex flex-col items-center justify-center shadow-md rounded-2xl w-[90%] h-max p-5;
+    }
+    .code {
+        @apply p-[20px] font-fira text-[20px];
+    }
+    .paragraph {
+        @apply mt-5 text-[20px] text-gray-600 font-medium;
+    }
+    .subtitle {
+        @apply text-cyan-500 text-3xl font-bold mb-6;
     }
 }
+
+.code span {
+    white-space: break-spaces !important;
+    border-radius: 8px !important;
+}
+
+/* .imagem-uepg {
+    background-color: black;
+    border-radius: 20px;
+    padding: 40px;
+    animation: animacao 2s infinite;
+}
+
+@keyframes animacao {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 60%
+    }
+    100% {
+        opacity: 100%;
+    }
+} */
