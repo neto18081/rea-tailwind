@@ -16,10 +16,10 @@
     }
 
     .seccao {
-        @apply mt-10 flex flex-col items-center justify-center shadow-md rounded-2xl w-[90%] h-max p-5;
+        @apply mt-10 flex flex-col items-center justify-center shadow-md rounded-2xl h-max p-5;
     }
     .code {
-        @apply p-[20px] font-fira text-[20px];
+        @apply sm:p-[20px] font-fira text-[20px];
     }
     .paragraph {
         @apply mt-5 text-[20px] text-gray-600 font-medium;

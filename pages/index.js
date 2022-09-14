@@ -43,15 +43,15 @@ export default function Home() {
 
       <div className={`${!dark ? "" : "dark"}`}>
         <div
-          className={` ease-out duration-300 flex flex-col items-center justify-center py-10 max-w-[1280px] w-full px-[20px] mx-auto`}
+          className={` ease-out duration-300 flex flex-col items-center justify-center py-10 max-w-[1280px] w-full mx-auto`}
         >
-          <h1 className="text-3xl mx-4 md:text-4xl xl:text-[82px] w-full text-cyan-500 font-bold mb-[10px]">
+          <h1 className="px-[20px] text-3xl mx-4 md:text-4xl xl:text-[82px] w-full text-cyan-500 font-bold mb-[10px]">
             Tailwind
           </h1>
-          <span className="text-gray-400 w-full text-[26px]">
+          <span className="px-[20px] text-gray-400 w-full text-[26px]">
             Uma forma mais prática de usar CSS
           </span>
-          <div className="sm:pl-[20px]">
+          <div className="sm:pl-[40px] px-[20px]">
             <p className={`paragraph ${dark && "text-gray-400"}`}>
               Assim como o Boostrap, Tailwind é um framework CSS que oferece a
               possibilidade de você criar layouts usando uma estrutura de CSS
@@ -73,15 +73,15 @@ export default function Home() {
             <span className={`subtitle`}>
               Comparção entre utilizar Tailwind e CSS puro
             </span>
-            <div className="flex items-center justify-center">
-              <div className="w-[50%]">
+            <div className="flex items-center justify-center flex-col lg:flex-row">
+              <div className="w-full lg:w-[50%]">
                 <img
                   src="/uepg.png"
                   alt="Logo UEPG"
-                  className="bg-black rounded-xl p-10 animate-pulse"
+                  className="bg-black rounded-xl p-10 animate-pulse mx-auto"
                 />
               </div>
-              <div className="flex gap-2 justify-center items-start mt-5 flex-col w-[50%]">
+              <div className="flex gap-2 justify-center items-start mt-5 flex-col w-full lg:w-[50%]">
                 <div className="w-full">
                   <span className="text-cyan-500 text-xl text-center">
                     TailWind
