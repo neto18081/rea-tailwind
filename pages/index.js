@@ -41,9 +41,9 @@ export default function Home() {
         <title>REA - TailWind</title>
       </Head>
 
-      <div className={`${!dark ? "" : "dark"}`}>
+      <div className={`${!dark ? "" : "dark"} ease-out duration-300`}>
         <div
-          className={` ease-out duration-300 flex flex-col items-center justify-center py-10 max-w-[1280px] w-full mx-auto`}
+          className={`flex flex-col items-center justify-center py-10 max-w-[1280px] w-full mx-auto`}
         >
           <h1 className="px-[20px] text-3xl mx-4 md:text-4xl xl:text-[82px] w-full text-cyan-500 font-bold mb-[10px]">
             Tailwind
@@ -71,7 +71,7 @@ export default function Home() {
           </div>
           <section className={`seccao ${dark && "border border-slate-600"}`}>
             <span className={`subtitle`}>
-              Comparção entre utilizar Tailwind e CSS puro
+              Comparação entre utilizar Tailwind e CSS puro
             </span>
             <div className="flex items-center justify-center flex-col lg:flex-row">
               <div className="w-full lg:w-[50%]">
