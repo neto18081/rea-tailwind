@@ -12,20 +12,26 @@
     }
 
     .bloco {
-        @apply w-[90%] md: w-[80%] mx-auto text-center;
+        @apply w-[90%] md:w-[80%] mx-auto text-center;
     }
 
     .seccao {
-        @apply mt-10 flex flex-col items-center justify-center shadow-md rounded-2xl h-max p-5;
+        @apply mt-10 flex flex-col items-center justify-center shadow-md rounded-2xl w-[90%] h-max p-5;
     }
     .code {
-        @apply sm:p-[20px] font-fira text-[20px];
+        @apply p-[20px] font-fira text-[14px] md:text-[20px];
     }
     .paragraph {
-        @apply mt-5 text-[20px] text-gray-600 font-medium;
+        @apply mt-5 text-[14px] md:text-[20px] text-gray-600 font-medium;
     }
     .subtitle {
         @apply text-cyan-500 text-3xl font-bold mb-6;
+    }
+    .terminal{
+        @apply bg-[#282a36] text-white text-center py-1 px-2 md:py-2 md:px-4 rounded-xl w-max h-max text-sm md:text-xl border-2 border-cyan-500;
+    }
+    .spanzinho{
+        @apply py-2 px-4 bg-slate-400 text-white rounded-full font-bold;
     }
 }
 
